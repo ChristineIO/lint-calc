@@ -33,6 +33,7 @@ body {
     font-family: Verdana, Helvetica, sans-serif; 
     text-align: center !important; 
     margin-left: 5rem !important;
+    padding-top: 1ch;
     font-weight: 500;
 }
 
@@ -47,8 +48,8 @@ body {
     width: 25px;
 }
 
-.calc-btn:hover {
-    background-color: rgb(150, 150, 150);
+.pressed {
+    background-color: rgb(187, 187, 187);
 }
 
 .row {

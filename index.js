@@ -19,6 +19,7 @@ let minusBtn = document.getElementById('calc-minus');
 let multiplyBtn = document.getElementById('calc-multiply')
 let divideBtn = document.getElementById('calc-divide');
 let equalBtn = document.getElementById('calc-equals');
+let calcBtn = document.getElementsByClassName('calc-btn');
 
 document.querySelector('div').addEventListener('click', calcValue);
 
@@ -28,7 +29,6 @@ backspaceBtn.addEventListener('click', function backspace() {
     word = lastChar;
     displayVal.innerText = word;
 });
-
 
 let firstVal;
 let lastVal;
@@ -49,12 +49,16 @@ function calcValue(event) {
 
     displayVal.innerHTML += getUserNum;
 
+    if (displayVal.innerText.includes("0")) {
+        displayVal.innerText = displayVal.innerText.replace("0", "");
+    }
+
     if (displayValText == "NaN" || displayValText.includes("NaN")) {
         displayVal.innerText = "";
     }
 
     if (getUserNum === "C") {
-        displayVal.innerText = "";
+        displayVal.innerText = "0";
     } else if (displayVal.innerText.includes('+')) {
         firstVal = parseFloat(displayValText.substring(0, displayValText.indexOf('+')));
         lastVal = parseFloat(displayVal.innerText.split('+').pop());
@@ -83,6 +87,8 @@ function calcValue(event) {
         equalBtn.addEventListener('click', function () {
             displayVal.innerText = divideVal;
         });
+    } else if (displayVal.innerText.length >= 6) {
+        displayVal.innerText = "0";
     }
 }
 
@@ -119,3 +125,16 @@ document.addEventListener('keypress', function (event) {
         }
     }
 });
+
+function clicked() {
+    document.querySelectorAll('.calc-btn').forEach(item => {
+        item.addEventListener('click', event => {
+            var clickedMent = event.target;
+            clickedMent.classList.add('pressed');
+            setTimeout(() => {
+                clickedMent.classList.remove('pressed');
+            }, 125);
+        })
+    })
+}
+clicked();
