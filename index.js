@@ -29,17 +29,17 @@ backspaceBtn.addEventListener('click', function backspace() {
     displayVal.innerText = word;
 });
 
+
+let firstVal;
+let lastVal;
+let addedVal;
+let minusVal;
+let multiplyVal;
+let divideVal;
+
 function calcValue(event) {
     let getUserNum = event.target.textContent;
     let displayValText = displayVal.textContent;
-    let firstVal;
-    let lastVal;
-    let decimalCalc;
-    let addedVal;
-    let minusVal;
-    let multiplyVal;
-    let divideVal;
-
     if (getUserNum.includes('=')) {
         getUserNum = getUserNum.replace('=', '');
     }
@@ -85,3 +85,37 @@ function calcValue(event) {
         });
     }
 }
+
+document.addEventListener('keypress', function (event) {
+    let pressedKey = event.key;
+    console.log(pressedKey);
+    if (pressedKey === '+' || '-' || 'x' || '/') {
+        displayVal.innerHTML += pressedKey;
+    } if (displayVal.innerText.includes('Enter')) {
+        displayVal.innerText = displayVal.innerText.replace("Enter", "");
+        if (displayVal.innerText.includes('+') && event.key === "Enter") {
+            firstVal = parseFloat(displayVal.innerText.substring(0, displayVal.innerText.indexOf('+')));
+            lastVal = parseFloat(displayVal.innerText.split('+').pop());
+            addedVal = firstVal + lastVal;
+            displayVal.innerText = addedVal;
+        } else if (displayVal.innerText.includes('-') && event.key === "Enter") {
+            firstVal = parseFloat(displayVal.innerText.substring(0, displayVal.innerText.indexOf('-')));
+            lastVal = parseFloat(displayVal.innerText.split('-').pop());
+            minusVal = firstVal - lastVal;
+            displayVal.innerText = minusVal;
+        } else if (displayVal.innerText.includes('x') && event.key === "Enter") {
+            firstVal = parseFloat(displayVal.innerText.substring(0, displayVal.innerText.indexOf('x')));
+            lastVal = parseFloat(displayVal.innerText.split('x').pop());
+            multiplyVal = firstVal * lastVal;
+            displayVal.innerText = multiplyVal;
+        } else if (displayVal.innerText.includes('/') && event.key === "Enter") {
+            if (displayVal.innerText.includes('/') && pressedKey === "/") {
+                displayVal.innerText = displayVal.innerText.replace("/", "÷");
+            }
+            firstVal = parseFloat(displayVal.innerText.substring(0, displayVal.innerText.indexOf('/')));
+            lastVal = parseFloat(displayVal.innerText.split('/').pop());
+            divideVal = firstVal / lastVal;
+            displayVal.innerText = divideVal;
+        }
+    }
+});
