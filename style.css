@@ -63,11 +63,11 @@ body {
 
 #calc-zero {
     border-radius: 0 0 0 6.2px;
-    width: 52px;
+    width: 50px;
 }
 
 #calc-clear {
-    width: 52px;
+    width: 50px;
 }
 
 #calc-display-val {
@@ -82,7 +82,7 @@ body {
     font-size: 4rem;
     color: white;
     padding: 12px;
-    height: 80px;
+    height: 100px;
 }
 
 .calc-btn-operator {
