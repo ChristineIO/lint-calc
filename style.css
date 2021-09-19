@@ -97,3 +97,9 @@ body {
 #calc-equals {
     border-radius: 0 0 7px 0;
 }
+
+@media (max-width: 900px) {
+    .modal-help {
+        display: none;
+    }
+}
