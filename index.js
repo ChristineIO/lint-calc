@@ -1,0 +1,87 @@
+let oneBtn = document.getElementById('calc-one');
+let twoBtn = document.getElementById('calc-two');
+let threeBtn = document.getElementById('calc-three');
+let fourBtn = document.getElementById('calc-four');
+let fiveBtn = document.getElementById('calc-five');
+let sixBtn = document.getElementById('calc-six');
+let sevenBtn = document.getElementById('calc-seven');
+let eightBtn = document.getElementById('calc-eight');
+let nineBtn = document.getElementById('calc-nine');
+let zeroBtn = document.getElementById('calc-zero');
+
+let decimalBtn = document.getElementById('calc-decimal');
+let clearBtn = document.getElementById('calc-clear');
+let backspaceBtn = document.getElementById('calc-backspace');
+let displayVal = document.getElementById('calc-display-val');
+
+let plusBtn = document.getElementById('calc-plus');
+let minusBtn = document.getElementById('calc-minus');
+let multiplyBtn = document.getElementById('calc-multiply')
+let divideBtn = document.getElementById('calc-divide');
+let equalBtn = document.getElementById('calc-equals');
+
+document.querySelector('div').addEventListener('click', calcValue);
+
+backspaceBtn.addEventListener('click', function backspace() {
+    let word = displayVal.innerText;
+    var lastChar = word.slice(0, -1);
+    word = lastChar;
+    displayVal.innerText = word;
+});
+
+function calcValue(event) {
+    let getUserNum = event.target.textContent;
+    let displayValText = displayVal.textContent;
+    let firstVal;
+    let lastVal;
+    let decimalCalc;
+    let addedVal;
+    let minusVal;
+    let multiplyVal;
+    let divideVal;
+
+    if (getUserNum.includes('=')) {
+        getUserNum = getUserNum.replace('=', '');
+    }
+    if (getUserNum.includes('←')) {
+        getUserNum = getUserNum.replace('←', "");
+    }
+
+    displayVal.innerHTML += getUserNum;
+
+    if (displayValText == "NaN" || displayValText.includes("NaN")) {
+        displayVal.innerText = "";
+    }
+
+    if (getUserNum === "C") {
+        displayVal.innerText = "";
+    } else if (displayVal.innerText.includes('+')) {
+        firstVal = parseFloat(displayValText.substring(0, displayValText.indexOf('+')));
+        lastVal = parseFloat(displayVal.innerText.split('+').pop());
+        addedVal = firstVal + lastVal;
+        equalBtn.addEventListener('click', function () {
+            displayVal.innerText = addedVal;
+        });
+    } else if (displayVal.innerText.includes('-')) {
+        firstVal = parseFloat(displayValText.substring(0, displayValText.indexOf('-')));
+        lastVal = parseFloat(displayVal.innerText.split('-').pop());
+        minusVal = firstVal - lastVal;
+        equalBtn.addEventListener('click', function () {
+            displayVal.innerText = minusVal;
+        });
+    } else if (displayVal.innerText.includes('x')) {
+        firstVal = parseFloat(displayValText.substring(0, displayValText.indexOf('x')));
+        lastVal = parseFloat(displayVal.innerText.split('x').pop());
+        multiplyVal = firstVal * lastVal;
+        equalBtn.addEventListener('click', function () {
+            displayVal.innerText = multiplyVal;
+        });
+    } else if (displayVal.innerText.includes('÷')) {
+        firstVal = parseFloat(displayValText.substring(0, displayValText.indexOf('÷')));
+        lastVal = parseFloat(displayVal.innerText.split('÷').pop());
+        divideVal = firstVal / lastVal;
+        equalBtn.addEventListener('click', function () {
+            displayVal.innerText = divideVal;
+        });
+    }
+}
