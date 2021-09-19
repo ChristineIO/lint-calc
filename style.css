@@ -29,11 +29,10 @@ body {
     margin-left: 12rem;
     height: 6rem;
 }
-
 .author {
     font-family: Verdana, Helvetica, sans-serif; 
     text-align: center !important; 
-    margin-left: 7.5rem !important;
+    margin-left: 5rem !important;
     font-weight: 500;
 }
 
