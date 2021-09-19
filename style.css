@@ -22,10 +22,15 @@ body {
     padding-top: 2%;
 }
 
-.text {
-    margin-left: 5rem;
-    text-align: center;
-    font-weight: 520;
+.calc-img {
+    padding-top: 1rem;
+    margin-left: 8rem;
+}
+
+.author {
+    font-family: Verdana, Helvetica, sans-serif; 
+    text-align: center !important; 
+    font-weight: 500;
 }
 
 .calc-btn {
