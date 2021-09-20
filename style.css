@@ -78,12 +78,14 @@ body {
     text-align: right !important;
     background-color: #035397;
     border-radius: 7px 7px 0 0;
-    display: block !important;
+    word-break: break-word;
     overflow: hidden;
-    font-size: 4rem;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+    font-size: 3rem;
     color: white;
     padding: 12px;
-    height: 100px;
+    height: auto;
 }
 
 .calc-btn-operator {

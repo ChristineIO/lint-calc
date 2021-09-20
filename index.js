@@ -1,3 +1,5 @@
+/* Calculator app with HTML, CSS and JavaScript */
+
 let oneBtn = document.getElementById('calc-one');
 let twoBtn = document.getElementById('calc-two');
 let threeBtn = document.getElementById('calc-three');
@@ -54,7 +56,7 @@ function calcValue(event) {
     }
 
     if (displayValText == "NaN" || displayValText.includes("NaN")) {
-        displayVal.innerText = "";
+        displayVal.innerText = "0";
     }
 
     if (getUserNum === "C") {
@@ -87,8 +89,6 @@ function calcValue(event) {
         equalBtn.addEventListener('click', function () {
             displayVal.innerText = divideVal;
         });
-    } else if (displayVal.innerText.length >= 6) {
-        displayVal.innerText = "0";
     }
 }
 
