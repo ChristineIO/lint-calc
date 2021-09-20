@@ -106,3 +106,7 @@ body {
         display: none;
     }
 }
+
+.modal-help {
+    font-size: 2px;
+}
