@@ -5,6 +5,9 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="calc.ico" type="image/x-icon">
         <link rel="stylesheet" href="./bootstrap.min.css">
 		<link rel="stylesheet" href="style.css" />
@@ -16,35 +19,35 @@
             <div data-toggle="modal" data-target="#message" style="color: #e0dfdf;" class="modal-help">0</div>
            <div id="calc-parent">
             <div class="row">
-                <div class="column" id="calc-display-val">0</div>
+                <div class="column" id="calc-display-val">0 </div>
             </div>
 			<div class="row">
-                <div class="calc-btn column" id="calc-clear">C</div>
-                <div class="calc-btn column" id="calc-backspace">←</div>
-                <div class="calc-btn calc-btn-operator column" id="calc-divide">&#247</div>
+                <div class="calc-btn column waves-effect" id="calc-clear">C</div>
+                <div class="calc-btn column waves-effect" id="calc-backspace">←</div>
+                <div class="calc-btn calc-btn-operator column waves-effect" id="calc-divide">&#247</div>
             </div>
 			<div class="row">
-                <div class="calc-btn calc-btn-num column" id="calc-seven">7</div>
-                <div class="calc-btn calc-btn-num column" id="calc-eight">8</div>
-                <div class="calc-btn calc-btn-num column" id="calc-nine">9</div>
-                <div class="calc-btn calc-btn-operator column" id="calc-multiply">x</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-seven">7</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-eight">8</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-nine">9</div>
+                <div class="calc-btn calc-btn-operator column waves-effect" id="calc-multiply">×</div>
             </div>
 			<div class="row">
-                <div class="calc-btn calc-btn-num column" id="calc-four">4</div>
-                <div class="calc-btn calc-btn-num column" id="calc-five">5</div>
-                <div class="calc-btn calc-btn-num column" id="calc-six">6</div>
-                <div class="calc-btn calc-btn-operator column" id="calc-minus">-</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-four">4</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-five">5</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-six">6</div>
+                <div class="calc-btn calc-btn-operator column waves-effect" id="calc-minus">-</div>
             </div>
 			<div class="row">
-                <div class="calc-btn calc-btn-num column" id="calc-one">1</div>
-                <div class="calc-btn calc-btn-num column" id="calc-two">2</div>
-                <div class="calc-btn calc-btn-num column" id="calc-three">3</div>
-                <div class="calc-btn calc-btn-operator column" id="calc-plus">+</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-one">1</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-two">2</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-three">3</div>
+                <div class="calc-btn calc-btn-operator column waves-effect" id="calc-plus">+</div>
             </div>
 			<div class="row">
-                <div class="calc-btn calc-btn-num column" id="calc-zero">0</div>
-                <div class="calc-btn calc-btn-num column" id="calc-decimal">.</div>
-                <div class="calc-btn calc-btn-operator column" id="calc-equals">=</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-zero">0</div>
+                <div class="calc-btn calc-btn-num column waves-effect" id="calc-decimal">.</div>
+                <div class="calc-btn calc-btn-operator column waves-effect" id="calc-equals">=</div>
             </div>
             <div class="modal fade" id="message" tabindex="-1" role="dialog" aria-labelledby="message" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -55,10 +58,20 @@
                     </div>
                 </div>
             </div>
+            <table>
+                <td><span class="keep"></span></td>
+                <td>
+                  <span class="up"></span>
+                  <span class="down"></span>
+                </td>
+              </table>
            </div>
            <h1 class="author">Made by Chris IO</h1>
 		</div>
+        
+        <script src="../Query/jquery-3.6.0.min.js"></script>
         <script src="index.js"></script>
+        <script src="effects.js"></script>
         <script src="./jquery-slim.min.js"></script>
         <script src="./popper.min.js"></script>
         <script src="./bootstrap.min.js"></script>
